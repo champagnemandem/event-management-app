@@ -1,0 +1,489 @@
+<div *ngIf="event || errorType">
+
+  <banner heading="{{event.EventName}}" desc="{{event.Description}}" img="image"></banner>
+
+<!--     
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+###################### ABOUT THE EVENT SECTION ############################
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+-->
+<div ng2-sticky class="sticky-div desktop-nav">
+  <div class="event-details-nav-bar">
+    <div class="container">
+      <div class="row text-center event-details-nav-bar-row">
+        <div class="col-md-1 event-details-nav-bar-item-large" *ngIf="event.SessionAgendaModule">
+          <p class="event-details-nav-text event-details-nav-text-item-one" (click) ="onClick('agenda-section-scroll')">Agenda  </p>
+        </div>
+
+        <div class="col-md-1 event-details-nav-col" *ngIf="event.SessionAttendeeModule">
+          <p class="event-details-nav-text" (click) ="onClick('attendees-section-scroll')"><span class="event-detail-nav-bar">|</span>Attendees </p>
+        </div>
+
+        <div class="col-md-1 event-details-nav-col " *ngIf="event.SessionAttachmentModule">
+          <p class="event-details-nav-text" (click) ="onClick('attachment-section-scroll')"><span class="event-detail-nav-bar">|</span>Attachment </p>
+        </div>
+
+        <div class="col-md-1 event-details-nav-col " *ngIf="event.SessionDiscussionModule">
+          <p class="event-details-nav-text" (click) ="onClick('discussion-section-scroll')"><span class="event-detail-nav-bar">|</span>Discussion</p>
+        </div>
+
+        <div class="session-button-banner col-md-offset-1">
+          <ul class="session-button-banner-col">
+            <li class="session-button-banner-li" *ngFor="let b of event?.ButtonList">
+              <a class="session-button-links" [href]="b.ButtonUrl" target="_blank">{{b.ButtonName}}</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng2-sticky class="sticky-div mobile-nav">
+  <div class="row">
+    <div class="col-xs-3 event-details-nav-mobile" *ngIf="event.SessionAgendaModule">
+      <p class="event-details-nav-text-mobile event-details-nav-text-mobile-one" (click) ="onClick('agenda-section-scroll')">Agenda  </p>
+    </div>
+    <div class="col-xs-3 event-details-nav-mobile" *ngIf="event.SessionAttendeeModule">
+      <p class="event-details-nav-text-mobile" (click) ="onClick('attendees-section-scroll')"> Attendees </p>
+    </div>
+    <div class="col-xs-3 event-details-nav-mobile" *ngIf="event.SessionAttachmentModule">
+      <p class="event-details-nav-text-mobile" (click) ="onClick('attachment-section-scroll')"> Attachment </p>
+    </div>
+    <div class="col-xs-3 event-details-nav-mobile" *ngIf="event.SessionDiscussionModule">
+       <p class="event-details-nav-text-mobile" (click) ="onClick('discussion-section-scroll')"> Discussion</p>
+    </div>
+  </div>
+  <div class="row text-center refresh_btn_mobile_row">
+        <a href="#" class="refresh_btn_mobile">Refresh Page</a>
+  </div>
+
+</div>
+<div class="session-button-banner-mobile">
+  <div class="row session-button-banner-mobile text-center" *ngFor="let b of event?.ButtonList">
+    <a class="session-button-links" [href]="b.ButtonUrl" target="_blank">{{b.ButtonName}}</a>
+  </div>
+</div>
+
+
+<div class="container event_section">
+  <div class="row testrow">
+    <div class ="col-md-2 col-xs-4">
+      <div class ="row event-descript-date">
+        <p> Date:</p>
+      </div>
+      <div class ="row event-descript-date">
+        <span class="about_span"> {{event.Start_DateTime | date:'mediumDate'}} </span>
+      </div>
+    </div>
+    <div class ="col-md-2 col-xs-4">
+      <div class ="row">
+        <p> Time:</p>
+      </div>
+      <div class ="row">
+        <span class="about_span"> {{event.Start_DateTime | date:'shortTime'}} </span>
+      </div>
+    </div>
+    <div class ="col-md-2 col-xs-4">
+      <div class ="row">
+        <p> Location:</p>
+      </div>
+      <div class ="row">
+        <span class="about_span"> {{event.Location}}</span>
+      </div>
+    </div>
+    <div class ="col-md-2 col-xs-12">
+      <div class ="row text-center">
+        <a href="#" class="refresh_btn">Refresh Page</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="row event-descript-row">
+    <div class="col-md-8 col-xs-12 event-top">
+      <span class="small_bold"> Event Description </span>
+      <p id="event_description"> {{event.Description}} </p>
+    </div>
+    <div class="col-md-2 col-md-offset-2 col-xs-12 your-arrival">
+      <span class="small_bold"> Your Arrival </span>
+      <p>{{event.LocationText}} </p>
+      <button type="button" class="greenhouse-buttons btn btn-primary" data-toggle="modal" data-target="#myModal" (click) = "setMap(event.LatCoords, event.LongCoords)" >View Map</button>
+
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">{{event.LocationText}}</h4>
+            </div>
+            <div class="modal-body">
+              <google-map></google-map>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--     
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+########################### AGENDA SECTION ###############################
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+-->
+
+<div class="space_break_small"></div>
+
+<div class="container"  id="agenda-section-scroll" *ngIf="event.SessionAgendaModule">
+  <div class="row text-center">
+    <div class="col-md-offset-4">
+      <ul class="section-icon-header-shift">
+        <li class="section-icon-header-li"><img class="section-title-image" src="/experience/resource/agenda_logo"/></li>
+        <li class="section-icon-header-li"><h3> Agenda </h3></li>
+      </ul>
+    </div>
+  </div>
+  <div class="space_break"></div>
+
+  <div class="row day_split" *ngFor= " let item of sorted_dates; let j = index">
+    <div class="row text-center agenda_date">
+      <p>Day {{j+1}}: {{item.date}}</p>
+    </div>
+
+    <div class="individual_sessions" *ngFor =" let session of item.agendum; let i = index">
+      <div class="row agenda_item">
+       <div class="row">
+        <div class="col-md-4 col-xs-4 agenda-session-name-col">
+          <p class ="agenda_name">{{session.data.AgendaName}}</p>
+        </div>
+        <div class="col-md-3 col-md-offset-4 col-xs-6 agenda-session-date-col">
+          <p class="agenda-session-time">
+            {{session.data.Start_DateTime | date:'shortTime'}} to {{session.data.End_DateTime | date:'shortTime'}}
+          </p>
+        </div>
+        <div class="col-md-1 col-xs-2 arrow-column">
+          <a class="btn toggle_button"  (click)="toggleSign(j,i)" data-toggle="collapse" [attr.data-target]="'#' + session.data.Id">
+            <i class="fa fa-angle-{{session.togglePos}}"></i>
+          </a>
+        </div>
+      </div>
+
+      <div [attr.id]="session.data.Id" class="collapse">
+        <div class="agenda_collapsed row">
+          <div class="col-md-7 col-xs-12 session-descript-mobile">
+            <div class="row">
+              <span class="small_bold_agenda agenda_descript">Description and activities</span>
+              <p class="agenda_descript">{{session.data.Description}}</p>
+            </div>
+          </div>
+          <div class="col-md-2 col-md-offset-1 col-xs-12 session-descript-mobile">
+           <p class="small_bold_agenda"> Session Presenter</p>
+           <p>{{session.data.Presenter.FirstName}} {{session.data.Presenter.LastName}}</p>
+           <p class="small_bold_agenda" *ngIf = "session.data.Room != null"> Room Number</p>
+           <p>{{session.data.Room}}</p>
+         </div>
+       </div>
+     </div>
+   </div>      
+ </div>
+
+
+</div>
+</div>
+
+<!-- <div class="space_break_small"></div> -->
+
+
+
+<!--     
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+########################### ATTENDEES SECTION ############################
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+-->
+
+<div class="container" id="attendees-section-scroll" *ngIf="event.SessionAttendeeModule">
+  <div class="row text-center">
+    <div class="row text-center">
+      <div class="col-md-offset-4">
+        <ul class="section-icon-header-shift">
+          <li class="section-icon-header-li"><img class="section-title-image" src="/experience/resource/attendee_logo"/></li>
+          <li class="section-icon-header-li"><h3> Attendees </h3></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="space_break"></div>
+
+  <div class="row attendee-images-section" *ngFor ="let row of parsedInviteeMin" >
+    <div class="col-md-3 col-xs-12 text-center attendee-images-section-columns" *ngFor="let invitee of row" >
+      <img *ngIf="invitee.imgUrl != null; else elseBlock" class ="attendee_img" src="/experience/servlet/servlet.FileDownload?file={{invitee.imgUrl}}">
+      <ng-template #elseBlock><img class ="attendee_img" src="/experience/resource/defaultface"></ng-template>
+      <div class="row"> <div class="col-md-12"><p class ="attendee-name-p"> {{invitee.firstName}} {{invitee.lastName}}</p></div>  </div>
+      <div class="row"> <div class="col-md-12"><p id="attendee_title">{{invitee.title}}</p></div></div>
+    </div>
+  </div>
+
+  <div class="row text-center" *ngIf="showButtonBool">
+    <p class="show-more-invitee-button" (click) = "showMoreInviteeClick()"> Show {{showButton}} </p>
+  </div>
+
+</div>
+
+<!--     
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+###################### READING MATERIAL ##################################
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+-->
+
+<div class="container text-center attachment_section" id="attachment-section-scroll" *ngIf="event.SessionAttachmentModule">
+  <div class="row text-center">
+    <div class="row text-center">
+      <div class="col-md-offset-4">
+        <ul class="section-icon-header">
+          <li class="section-icon-header-li"><img class="section-title-image" src="/experience/resource/attachment_logo"/></li>
+          <li class="section-icon-header-li"><h3> Reading Materials </h3></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="space_break"></div>
+
+  <div class="row text-center">
+    <ul class="nav nav-pills reading_nav">
+      <li class="active session-toggle-button">
+        <a  data-toggle="pill" >
+         <span [ngClass]="attachmentsPhase == 'pre' ? 'text-center text-green': 'text-center link' " (click)="setAttachmentsPhase('pre')">
+          Pre-Reading
+        </span>
+      </a>
+    </li>
+    <li>
+      <a  data-toggle="pill" class="session-toggle-button">
+        <span [ngClass]="attachmentsPhase == 'during' ? 'text-center text-green': 'text-center link'" (click)="setAttachmentsPhase('during')">
+          During Session
+        </span>
+      </a>
+    </li>
+
+    <li>
+      <a  data-toggle="pill" class="session-toggle-button">
+        <span [ngClass]="attachmentsPhase == 'post' ? 'text-center text-green': 'text-center link'" (click)="setAttachmentsPhase('post')">
+          Post Session
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="tab-content">
+
+  <!-- pre-session -->
+  <div id="preSession" class="row" *ngFor="let attachment of event?.PreSessionAttachmentList"> 
+    <div class="tab-pane">
+      <div class="space_break_small"></div>
+      <div class="row">
+        <div class="no-content">
+         <div *ngIf="attachmentsPhase == 'pre'" >
+          <div *ngIf="event?.PreSessionAttachmentList.length == 0">
+            <p>There are no Pre Event reading materials</p>
+          </div>
+        </div>
+      </div>
+      <div class="yes-content">
+        <div *ngIf="attachmentsPhase == 'pre'">
+          <div class="row session-attachment-row-content">
+            <div class="col-md-5 col-md-offset-3 col-xs-10 text-center">
+              <p class="attachment-title">{{attachment.Name}}</p></div>
+            </div>
+            <div class="row">
+             <div class="col-md-2 col-md-offset-2">
+              <i class="fa fa-file fa-3x book_image"></i>
+            </div>
+            <div class="col-md-5 col-xs-12 text-center attachment-descript-parent"> 
+              <p class="attachment-descript">{{attachment.Description}}</p>
+            </div>
+            <div class="col-md-1 col-xs-12 text-center">
+              <a [href]=" '/experience' + attachment.Document" target="_blank"> 
+                <i class="fa fa-cloud-download fa-3x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- during-session -->
+  <div id="duringSession" class="row" *ngFor="let attachment of event?.DuringSessionAttachmentList">
+    <div id="menu2" class="tab-pane">
+      <div class="row">
+        <div class="no-content">
+          <div *ngIf="attachmentsPhase == 'during'">
+            <div *ngIf="event?.DuringSessionAttachmentList.length == 0">
+              <p>There are no Event reading materials</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="yes-content">
+          <div *ngIf="attachmentsPhase == 'during'">
+            <div class="row session-attachment-row-content">
+              <div class="col-md-5 col-md-offset-3 col-xs-10 text-center">
+                <p class="attachment-title">{{attachment.Name}}</p></div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-md-offset-2">
+                  <i class="fa fa-file fa-3x book_image"></i>
+                </div>
+                <div class="col-md-5 col-xs-12 text-center attachment-descript-parent"> 
+                  <p class="attachment-descript">{{attachment.Description}}</p>
+                </div>
+                <div class="col-md-1 col-xs-12 text-center">
+                  <a [href]=" '/experience' + attachment.Document" target="_blank">
+                   <i class="fa fa-cloud-download fa-3x"></i></a>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+
+     <div id="postSession" class="row" *ngFor="let attachment of event?.PostSessionAttachmentList">
+      <div id="menu3" class="tab-pane">
+        <div class="row">
+          <div class="no-content">
+            <div *ngIf="attachmentsPhase == 'post'" >
+              <div *ngIf="event?.PostSessionAttachmentList.length == 0">
+                <p>There are no Post Event reading materials</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="yes-content">
+            <div *ngIf="attachmentsPhase == 'post'" >
+              <div class="row session-attachment-row-content">
+                <div class="col-md-5 col-md-offset-3 col-xs-10 text-center">
+                  <p class="attachment-title">{{attachment.Name}}</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 col-md-offset-2">
+                    <i class="fa fa-file fa-3x book_image"></i>
+                  </div>
+                  <div class="col-md-5 col-xs-12 text-center"> 
+                    <p class="attachment-descript attachment-descript-parent">{{attachment.Description}}</p>
+                  </div>
+                  <div class="col-md-1 col-xs-12 text-center">
+                    <a [href]=" '/experience' + attachment.Document" target="_blank"> 
+                      <i class="fa fa-cloud-download fa-3x"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--     
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+############################ DISCUSSION ##################################
+##########################################################################
+##########################################################################
+##########################################################################
+##########################################################################
+-->
+
+<div class="container discussion-section" id="discussion-section-scroll" *ngIf="event.SessionDiscussionModule">
+  <div class="row text-center">
+    <div class="row text-center">
+      <div class="col-md-offset-4">
+        <ul class="section-icon-header">
+          <li class="section-icon-header-li"><img class="section-title-image" src="/experience/resource/discussion_logo"/></li>
+          <li class="section-icon-header-li"><h3> Discussion </h3></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <p>Post your questions regarding this Greenhouse event annonymously and we'll address these questions during the session. </p>
+  </div>
+
+
+  <form novalidate [formGroup]="discussionForm" (ngSubmit)="updateDiscussion(discussionForm.value)">
+    <div class="row text-center">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="form-group">
+          <input type="text" class="form-control discussion-input" formControlName="DiscussionQuestion" [(ngModel)]="discussion.DiscussionQuestion"/>
+        </div>
+      </div>
+    </div>
+    <div class ="row">
+      <div class="col-md-offset-10 col-xs-offset-9">
+        <button (click) ="filler()" type="submit" class="greenhouse-buttons discussion-button btn btn-primary right-block" placeholder = "Enter your questions here">Post</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-xs-12">
+      <p id="discussion-posted-questions"> Posted Questions </p>
+    </div>
+  </div>
+  <div class="row posted-discussion-questions-row" *ngFor="let d of event?.DiscussionList">
+    <div class="col-md-10 col-md-offset-1 col-xs-12 posted-discussion-questions"> 
+      <p> {{d.DiscussionQuestion}} </p>
+    </div>
+  </div>
+
+  <div class="row posted-discussion-questions-row" *ngFor="let f of fillerQuestion">
+    <div class="col-md-10 col-md-offset-1 col-xs-12 posted-discussion-questions"> 
+      <p> {{f}} </p>
+    </div>
+  </div>
+
+
+</div>
+
+</div>

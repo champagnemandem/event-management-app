@@ -1,0 +1,107 @@
+<div *ngIf="user && contact">
+  <banner heading="User Profile" desc="Update user profile and event preferences. Your information will be saved and automatically populated into any future event registrations" img="image"></banner>
+  <div class="space_break"></div>
+
+<!-- Basic Info -->
+
+  <div class="container">
+    <form novalidate [formGroup]="contactForm" (ngSubmit)="updateContact(contactForm.value, contactForm.valid)">
+
+      <div id="basic_info"  class="alert alert-success alert-dismissable collapse">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>Success!</strong> Your basic information has been updated.
+      </div>
+
+      <div id="preference_info"  class="alert alert-success alert-dismissable collapse">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>Success!</strong> Your preferences have been updated.
+      </div>
+
+      <div class="row"><h5 class="profile-label-title">Basic Information</h5></div>
+      <div class="space_break_small"></div>
+
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+
+          <div class="form-group">
+            <p class ="profile_label">First Name</p>
+            <input type="text" class="form-control profile-input" formControlName="firstName" placeholder="First Name" [(ngModel)]="contact.firstName"/>
+          </div>
+          <div class="form-group">
+            <p class ="profile_label">Last Name</p>           
+            <input type="text" class="form-control profile-input" formControlName="lastName" placeholder="Last Name" [(ngModel)]="contact.lastName"/>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+          <p class ="profile_label">Position Title</p>
+          <div class="form-group">
+            <input type="text" class="form-control profile-input" formControlName="title" placeholder="Position Title" [(ngModel)]="contact.title"/>
+          </div>
+          <div class="form-group">
+            <p class ="profile_label">Phone Number</p>
+            <input type="text" class="form-control profile-input" formControlName="phone" placeholder="Phone Number" [(ngModel)]="contact.phone"/>
+          </div>
+
+          <!-- <div class="form-group">
+              <input type="file" class="form-control" formControlName="photo" [(ngModel)]="contact.photo" accept="image/*">
+          </div> -->
+    
+        <p><label for="filePicker">Please Upload Your Photo</label></p>
+        <div class="file-upload">
+          <input type="file" id="filePicker"(change)="handleFileSelect($event)">
+        </div>
+        </div>
+
+        <!-- Save button -->
+        <div class="row profile-save-button">
+          <div class="col-md-12 col-md-offset-11 col-xs-12 profile-save-button">
+            <button type="submit" class=" greenhouse-buttons btn btn-primary right-block" data-toggle="collapse" data-target="#basic_info" >Save</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+<!-- Login Info -->
+
+<!-- Preferences -->
+
+   <div class="container">
+    <form novalidate [formGroup]="contactForm" (ngSubmit)="updateContact(contactForm.value, contactForm.valid)">
+
+
+      <div class="row"><h5 class="profile-label-title">Preferences</h5></div>
+      <div class="space_break_small"></div>
+
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <div class="form-group">
+            <p class ="profile_label">Dietary Restrictions</p>
+            <input type="text" class="form-control profile-input" formControlName="food" placeholder="Dietary restrictions (please list all food and non-food related allergies)" [(ngModel)]="contact.food"/>
+          </div>
+        </div>
+
+        <!-- Save button -->
+        <div class="row profile-save-button">
+          <div class="col-md-12 col-md-offset-11 col-xs-12 profile-save-button">
+            <button type="submit" class=" greenhouse-buttons btn btn-primary right-block" data-toggle="collapse" data-target="#preference_info">Save</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+    <br>
+
+
+  <div class="space_break"></div>
+  <div class="space_break"></div>
+  <div class="space_break"></div>
+
+
+
+
+</div>

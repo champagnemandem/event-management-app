@@ -1,0 +1,30 @@
+.jumoboron-black {
+  background-color: #000000 !important;
+}
+
+.jumbotron p {
+  font-size: 16px;
+}
+
+.jumbotron {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  margin-top: 0;
+  font-size: 40px
+}
+
+.grad {
+  background: url('../../static/Desktop/PNGs/DEL Greenhouse 04 Gradient.png') right top no-repeat;
+  background-size: contain;
+  background-color: #000000;
+  background-size: 400px;
+}
+
+@media (max-width: 768px) {
+  .grad {
+    background-size: 180px;
+  }
+}

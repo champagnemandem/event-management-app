@@ -1,0 +1,47 @@
+
+<div class="events-page" *ngIf="events || errorType">
+  <banner heading="Event Listing" desc="See your schedule with the Deloitte Greenhouse. Check your registered events for agendas, session reading materials, travel information, and other details." img="image"></banner>
+  <div class="space_break"></div>
+  <div class="container " *ngIf="events">
+    <div class="row event-header">
+      <p><b>My Registered Events</b></p>
+    </div>
+    <div class="row event-detail-banner" *ngFor="let event of events; let i = index"><!-- " -->
+      <div *ngIf="!pastEvents(event.End_DateTime) && !event.ArchiveSession">
+
+        <a [routerLink]="['./', event.Id]" routerLinkActive="active">
+          <div class="col-md-6 events-bar" [ngStyle]="backgroundStyle(event.EventImgUrl, event.EventTextColor)">
+            <div class="row">
+              <div class="col-md-6 col-xs-10">
+                <div class="events-description"  >
+                  <p class="event_page_name" >{{event.EventName}}</p>
+                  <p class="event_date" >{{event.Start_DateTime | date: 'mediumDate'}}</p>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </a>
+        </div>
+      </div>
+
+    <div class="row event-header past-events-panel"><p><b>Past Events</b></p></div>
+
+      <div class="row event-detail-banner" *ngFor="let event of events; let i = index"><!-- " -->
+        <div *ngIf="pastEvents(event.End_DateTime) && !event.ArchiveSession">
+          <a [routerLink]="['./', event.Id]" routerLinkActive="active">
+            <div class="col-md-6 events-bar" [ngStyle]="backgroundStyle(event.EventImgUrl, event.EventTextColor)">
+              <div class="row">
+                <div class="col-md-6 col-xs-10">
+                  <div class="events-description">
+                    <p class="event_page_name">{{event.EventName}}</p>
+                    <p class="event_date">{{event.Start_DateTime | date: 'mediumDate'}}</p>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+

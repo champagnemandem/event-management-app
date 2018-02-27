@@ -1,0 +1,58 @@
+<% if (!local) { %>
+<apex:page controller="<%= controller %>" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<% } %>
+<html>
+	<head>
+		<base href="<%= baseUrl %>"/>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" type="image/png" href="assets/img/brandspace/favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Greenhouse Experience</title>
+		<script type="text/javascript"> if(!window._sf) window._sf = {} </script>
+		<% if (local) { %>
+			<script type="text/javascript">
+				window.local = true;
+				window._sf.auth = <%= auth %>
+			</script>
+		<% } else { %>
+			<script type="text/javascript">
+	    	window._sf.api = "{!JSENCODE($Api.Session_ID)}";
+				window._sf.node_modules_dir= "<%= node_modules_directory %>";
+				window._sf.app_dir = "<%= app_directory %>";
+			</script>
+		<% } %>
+
+<!-- 		Stylesheet -->
+		<!-- <link rel="stylesheet" href="<%= app_directory %>styles/semantic.min.css" media="screen" charset="utf-8" /> -->
+		<link rel="stylesheet" href="./styles/style.css" media="screen" charset="utf-8" />
+
+		<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="./styles/bootstrap-3.3.7-dist/css/bootstrap.css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="./styles/bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"/>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  		<script type="text/javascript" src="./styles/bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+  		<script src="./styles/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  		<script type="text/javascript" src="./styles/bootstrap-3.3.7-dist/js/jquery.sticky.js"></script>
+
+
+	</head>
+	<body>
+		<app>Loading...</app>
+
+	<script src="<%= node_modules_directory %>core-js/client/shim.min.js"></script>
+    <script src="<%= node_modules_directory %>zone.js/dist/zone.js"></script>
+    <script src="<%= node_modules_directory %>reflect-metadata/Reflect.js"></script>
+    <script src="<%= node_modules_directory %>systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="<%= app_directory %>systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); })
+    </script>
+	</body>
+</html>
+<% if (!local) { %>
+</apex:page>
+<% } %>

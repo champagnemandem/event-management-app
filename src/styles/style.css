@@ -1,0 +1,809 @@
+p, span, li, ul, h1, h2, h3, h4, h5, h6, button, a, label {
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+body {
+	/*overflow:auto;*/
+	overflow-x:hidden;
+	z-index: 0;
+}
+
+.small_bold{
+	font-weight: bold;
+}
+
+
+.space_break{
+	padding:20px;
+}
+
+.space_break_small{
+	padding:10px;
+}
+
+.greenhouse-buttons {
+	background-color: #86BC25 !important;
+	padding-left: 30px !important;
+	padding-right: 30px !important;
+	border-radius: 0 !important;
+	border-color: #86BC25 !important;
+
+}
+
+.section-title-image {
+	width: 50%;
+}
+
+.section-icon-header{
+	list-style-type: none;
+	/*margin-left: 10%;*/
+}
+
+.section-icon-header-shift{
+	list-style-type: none;
+	margin-left: 10%;
+}
+
+.section-icon-header-li {
+	display: inline;
+	float: left;
+}
+
+/*################################
+##################################
+##################################
+#########Event Page###############
+##################################
+##################################
+##################*/
+
+
+/*.events-bar{
+	background: 
+
+    linear-gradient(
+      rgba(69, 69, 69, 0.6), 
+      rgba(69, 69, 69, 0.6)
+    ),
+
+    url("../../../assets/img/brandspace/background-1.png") !important;
+	background-repeat: no-repeat;
+	background-size: 100% !important;
+	background-position: center !important;
+	padding: 20px;
+	margin-bottom: 20px;
+
+}*/
+
+.sticky-div{
+	z-index: 1 !important;
+	top: 72px !important;
+}
+
+.mobile-nav {
+	display: none;
+}
+
+.sticky-div-spacing{
+	height: 10
+}
+
+.session-button-banner-col{
+	list-style-type: none;
+}
+
+.session-button-banner-li {
+	display: inline;
+	margin-right: 35px;
+}
+
+.session-button-banner{
+	float: right;
+	margin-right: 100px;
+}
+.event-detail-nav-bar-item-mobile{
+	display: none;
+}
+
+.event-details-nav-col{
+	margin-right: 2%;
+}
+.event-detail-nav-bar{
+	margin-right: 10px;
+}
+
+.event-details-nav-text:hover{
+	cursor: pointer;
+}
+
+.event-details-nav-bar-item-large{
+	margin-right: 2%;
+	margin-left: -2%;
+}
+
+.session-button-banner{
+	margin-left: 30px;
+}
+.session-button-links {
+	color:#86BC25;
+	font-weight: bold;
+	padding: 6px;
+}
+
+.session-button-links:hover{
+	background-color: #fff;
+	padding: 6px;
+	border-radius: 2px;
+	text-decoration: none;
+	color:#000;
+}
+.session-button-banner-mobile{
+	display: none;
+}
+.event-details-nav-bar{
+	background-color: #000;
+	width: 100% !important;
+	height: 70px !important;
+}
+
+.event-details-nav-text{
+	color:#fff;
+	font-weight: bold;
+}
+
+..event-details-nav-text:hover {
+	font-weight: bolder;
+}
+
+.event-details-nav-bar-row{
+	padding-top: 25px;
+	padding-bottom: 20px;
+}
+
+.events-description p {
+	margin-left: 10px;
+
+}
+
+.refresh_btn_mobile_row{
+	margin-top: 5px;
+}
+
+.refresh_btn_mobile{
+	font-weight: bold;
+}
+
+.event_date {
+	font-weight: lighter;
+}
+
+.event_page_name{
+	font-weight: bold;
+}
+
+.event_img{
+	margin-top: 10px;
+}
+
+
+.events-page {
+	margin-bottom: 10%;
+}
+
+.event-header {
+	margin-left: 20px !important;
+}
+
+.event-detail-banner{
+	margin-left: 20px !important;
+	/*margin-top: 1% !important;*/
+}
+
+.past-events-panel{
+	margin-top: 5%;
+}
+
+
+/*################################
+##################################
+##################################
+#######Event Details Page#########
+##################################
+##################################
+##################*/
+
+.refresh_btn{
+	font-weight: bolder;
+}
+
+.event_section{
+	margin-top: 20px;
+}
+
+agm-map {
+  height: 300px;
+}
+
+/*#######About section#######*/
+.event_section{
+	margin-left: 50%;
+}
+
+.about_span {
+	margin-top: -20px;
+	color: #86BC23;
+}
+
+.about_span_link {
+	color: #1A94D3;
+	font-weight: bold;
+}
+
+.event_description {
+	font-size: 13px;
+}
+
+.testrow{
+	margin-left: 20px !important;
+}
+
+.event-descript-row {
+	margin-left: 2px !important;
+}
+
+
+/*#######Agenda section#######*/
+
+
+
+.agenda_name{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.small_bold_agenda{
+	font-weight: bolder;
+	font-size: 15;
+}
+
+.agenda-session-date-col{
+	float: right;
+}
+
+.toggle_button i.fa-angle-down {
+	font-size: 38px;
+	margin-top:  -65%;
+	color: #9b989a;
+}
+
+.toggle_button i.fa-angle-up {
+	font-size: 38px;
+	margin-top:  -65%;
+	color: #9b989a;
+}
+
+.toggle_button:hover {
+	color:#7a7779;
+	margin-left: 20px;
+
+}
+
+.toggle_button {
+	color:#9b989a;
+	margin-left: 20px;
+}
+
+.individual_sessions{
+	border-bottom: 1px solid #9b989a;
+
+}
+
+.agenda_collapsed{
+	margin-top: 2%;
+}
+
+.agenda_date{
+	background-color: #000;
+}
+
+.agenda_date p {
+	color: #fff;
+	margin-top: 12px;
+}
+
+.agenda_item {
+	padding:12px;
+}
+
+#attendee_title{
+	color:#000;
+	margin-top: -15px;
+	float: left;
+	margin-left:15%;
+	
+}
+
+.attendee-name-p{
+	margin-top: 10px;
+	font-weight: bold;
+	float: left;
+	margin-left:15%;
+}
+
+
+.attendee-images-section img{
+	width: 180px;
+	height: 180px;
+	object-fit: cover;
+}
+
+
+.attendee-images-section {
+	margin-bottom: 4%;
+}
+
+.agenda_descript{
+	padding-left: 15px;
+}
+
+.activity_button{
+	margin-top: 30px;
+}
+
+.reading_nav{
+	text-align: center;
+	float:none;
+	display: inline-block;
+}
+
+.day_split{
+	margin-bottom: 5%;
+	margin-left: 34px !important;
+	/*margin-right: 10px !important;*/
+}
+
+.show-more-invitee-button{
+	color: #1A94D3;
+}
+
+.show-more-invitee-button:hover {
+	color: #1A94D3;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/*#######Attachment section#######*/
+
+.text-green:hover {
+	cursor: pointer;
+}
+
+.fa-cloud-download{
+   	color: #86BC25;
+   }
+
+.reading_nav li.active a {
+	background-color: #86BC25 !important;
+}
+
+.reading_nav li.active span {
+	color: #fff !important;
+}
+
+.read_nav a {
+	color: #000;
+}
+
+.link:hover {
+	cursor: pointer;
+}
+
+.attachment_section{
+	margin-top: 4%;
+}
+
+.attachment-title {
+	font-weight: bold;
+	padding-left: 20%;
+}
+
+.attachment-descript{
+	text-align: left;
+	margin-left: -15%;
+
+}
+
+
+.session-attachment-row-content{
+	margin-top: 10px;
+}
+
+
+/*####### Discussion section#######*/
+.discussion-section{
+	margin-bottom: 10% !important;
+	margin-top: 5% !important;
+}
+
+.discussion-button{
+	margin-left: -6px;
+}
+
+#discussion-posted-questions {
+	font-weight: bold;
+	text-align: left;
+	font-size: 13px;
+}
+
+.posted-discussion-questions{
+	border: 1px solid #9b989a;
+	padding-top:10px;
+	padding-bottom:10px;
+
+}
+
+.posted-discussion-questions-row{
+	margin-bottom: 10px;
+	margin-left: 1px !important;
+	margin-right: 1px !important;
+}
+
+.discussion-input{
+	padding: 30px !important;
+}
+
+/*################################
+##################################
+##################################
+#######FAQ Page#########
+##################################
+##################################
+##################*/
+.faq_question {
+	font-weight: bold;
+}
+
+.foot-text {
+	color:#fff;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+
+
+/*################################
+##################################
+##################################
+#############Banner##############
+##################################
+##################################
+##################*/
+.file-upload{
+	display: block;
+    /*width: auto;*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+event-detail .banner-jumbotron {
+	background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(43, 48, 98, 0.8), 
+      rgba(43, 48, 98, 0.8)
+    ),
+    /* bottom, image */
+    url("/experience/resource/eventdetailpage") !important;
+	background-repeat: no-repeat;
+	background-size: 100% !important;
+	background-position: center !important;
+	padding: 100px;
+}
+
+faq-page .banner-jumbotron {
+	background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(43, 48, 98, 0.8), 
+      rgba(43, 48, 98, 0.8)
+    ),
+    /* bottom, image */
+    url("/experience/resource/faqpage") !important;
+	background-repeat: no-repeat;
+	background-size: 100% !important;
+	background-position: center !important;
+	padding: 100px;
+
+}
+
+event-listing .banner-jumbotron {
+	background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(43, 48, 98, 0.8), 
+      rgba(43, 48, 98, 0.8)
+    ),
+    /* bottom, image */
+    url("/experience/resource/eventlistpage") !important;
+	background-repeat: no-repeat;
+	background-size: 100% !important;
+	background-position: center !important;
+	padding: 100px;
+
+}	
+
+profile-page .banner-jumbotron {
+	background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(43, 48, 98, 0.8), 
+      rgba(43, 48, 98, 0.8)
+    ),
+    /* bottom, image */
+    url("/experience/resource/profilepage") !important;
+	background-repeat: no-repeat;
+	background-size: 100% !important;
+	background-position: center !important;
+	padding: 100px;
+
+}	
+
+
+.banner-head {
+	font-size: 40px !important;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+
+}
+
+.banner-desc{
+	font-size: 12px !important;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+}
+
+@media only screen and (max-width: 1080px)  {
+	.banner-head {
+	font-size: 26px !important;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+
+	}
+}
+
+/*################################
+##################################
+##################################
+#############Profile Page##############
+##################################
+##################################
+##################*/
+
+
+.profile-label-title {
+	padding-left: 14px;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.profile-input{
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+
+
+.profile-save-button{
+	margin-right: 25px !important;
+}
+
+/*################################
+##################################
+##################################
+#############Header##############
+##################################
+##################################
+##################*/
+
+
+.navbar {
+	padding-bottom: 15px;
+}
+
+
+
+/*################################
+##################################
+##################################
+#############Footer##############
+##################################
+##################################
+##################*/
+
+.footer-link:hover {
+	font-weight: bold;
+}
+
+.footer{
+	position: fixed !important;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+}
+
+
+/*################################
+##################################
+##################################
+##############Mobile##############
+##################################
+##################################
+##################*/
+
+@media screen and (max-width:1080px) {  
+
+	.refresh_btn_mobile_row{
+		margin-top: -5px;
+	}
+
+	#attendee_title{
+		margin-left: 25%;	
+	}
+	.refresh_btn{
+		display: none;
+	}
+
+	.attendee-name-p{
+		margin-left: 25%;
+	}
+
+  .book_image {
+    display: none !important;
+  }
+  .attachment_section{
+	/*margin-bottom: 100px !important;*/
+   }
+
+   .agenda-session-date-col{
+   		float: left;
+   }
+   .about_span_link {
+   		margin-top: 10%;
+   }
+
+   .arrow-column{
+   	margin-left: -25px;
+   }
+
+   .event-top {
+   	 text-align: center;
+   }
+
+   .view-discussion {
+   	margin-top: 25px;
+   }
+   .event-descript-date {
+   	padding-left: 15px;
+   }
+   .agenda-session-name-col{
+   	padding-left: 25px !important;
+   }
+   .attachment-descript-parent{
+   	 padding-left: 100px !important;
+   	 padding-right: 40px !important;
+   }
+   .profile-save-button {
+   	 	text-align: center;
+   	 	margin-top: 15px;
+   }
+
+   .modal-dialog{
+   	margin-right: 40px !important;
+   }
+
+   .your-arrival{
+   	text-align: center;;
+   }
+   .session-descript-mobile{
+   	padding-left: 30px !important;
+   	padding-right: 40px !important;
+   }
+
+   .discussion-section{
+   		margin-bottom: 15% !important;
+   }
+
+   .footer {
+   	position: relative !important;
+   	height: 150px;
+   }
+
+   .event-detail-banner {
+   	margin-right: 10px !important;
+   }
+
+   .banner-jumbotron{
+   	padding: 50px !important;
+   }
+
+   .header_img {
+   	width: 70%;
+   }
+
+   .event-detail-nav-bar{
+   	display: none;
+   }
+
+   .event-details-nav-bar{
+		background-color: #000;
+		width: 100% !important;
+		height: 250px !important;
+	}
+	.event-detail-nav-filler{
+		display: none;
+	}
+
+	.event-details-nav-col {
+		margin-right: 10px;
+	}
+	.session-button-banner{
+		display: none;
+	}
+
+	.session-button-banner-mobile {
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	.event-details-nav-text-item-one{
+		margin-left: -4px !important;
+	}
+
+	.attendee-images-section-columns{
+		margin-bottom: 10px;
+	}
+
+	.day_split{
+		margin-right: 25px !important;
+	}
+
+	.desktop-nav{
+		display: none;
+	}
+	.mobile-nav {
+		display: block;
+		background-color: #000;
+		height: 60px;
+	}
+	.event-details-nav-text-mobile {
+		color: #fff;
+		font-size: 11px;
+	}
+	.event-details-nav-mobile {
+		margin-top: 10px;
+	}
+	.event-details-nav-text-mobile-one {
+		margin-left: 15px;
+	}
+	.sticky-div{
+		top: 62px !important;
+	}
+	.session-button-banner-mobile {
+		background-color: #000;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+}
+
+@media screen and (max-width:1750px) {  
+	.event-details-nav-text-item-one{
+		margin-left: 40px;
+	}
+}
+
+@media screen and (max-width:2200px) {  
+	.event-details-nav-text-item-one{
+		margin-left: 50px;
+	}
+}
